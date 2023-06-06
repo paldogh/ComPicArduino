@@ -1,0 +1,4 @@
+>>> Warning 202 "picSerial2.c" Line 20(7,12): Variable never used:   valor
+      Memory usage:   ROM=6%      RAM=2% - 5%
+      0 Errors,  1 Warnings.
+Build Successful.

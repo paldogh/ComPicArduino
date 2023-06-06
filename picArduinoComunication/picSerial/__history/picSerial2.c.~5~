@@ -1,0 +1,48 @@
+#include <16F877A.h>   // libería del pic
+//#include <rs232.h>
+#device ADC=8  // bits de conversión ADC (convertidor analógico digital)
+#use delay(crystal=4000000)   // definimos el crystal
+#include <lcd.c>   // incluímos la librería para la lcd
+#fuses xt,nowdt
+
+//comunicación rs232    // c6 tx en pic  c7  receptor  
+//#use rs232(baud=9600, xmit=PIN_c6,rcv=PIN_c7,stream=PIC,parity=N, bits=8)
+#use rs232(baud=9600,xmit=PIN_c6,rcv=PIN_c7,stream=PC, parity=N, bits=8)
+#use standard_io(c)
+
+void main(){
+enable_interrupts(INT_RDA);
+enable_interrupts(GLOBAL);
+
+
+//putc('1');
+ //printf("Aldox"); // Escribimos el valor de la variable temperatura (lectura del sensor)
+int   valor=getc();
+
+//printf("Aldox"); // Escribimos el valor de la variable temperatura (lectura del sensor)
+ 
+//setup_adc(ADC_CLOCK_DIV_32);// Asignamos el reloj de conversión ADC
+//setup_adc_ports(AN0);            // configuramos el puerto a0 
+//set_adc_channel(0);        // Seleccionamos channel 0 como entrada
+ 
+//char x= getc();
+ //printf("Hola");
+// fprintf(PIC,"%c",c); //Manda el caracter al segundo PIC
+///delay_ms(100);             // espera 10 microseg
+  lcd_gotoxy(3, 1);                 // ubicamos la posición 3,1 en la lcd para escribir el msj 
+  lcd_putc(x);
+delay_ms(200);
+/*mandar la información al ARDUINO O OTRO PIC */
+  // putc('7');
+ //fprintf(PIC,"%i",123); //Manda el caracter al segundo PIC
+
+//fprintf("%i",123); //Manda el caracter al segundo PIC
+
+ while(TRUE) {   // LEEMOS LA TEMPERATURA
+       lcd_gotoxy(7, 2);           // ubicamos la posición 7,2 en la lcd para escribir el msj
+    printf("Aldox"); // Escribimos el valor de la variable temperatura (lectura del sensor)
+    delay_ms(10); 
+       
+ }
+ 
+}

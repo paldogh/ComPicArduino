@@ -1,0 +1,26 @@
+[PROJECT]
+Target=picSerial.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.025
+Compiler=PCM
+[Target Data]
+FileList=picSerial.c
+[picSerial.c]
+Type=4
+[mru-list]
+1=picSerial.c
+
+[Opened Files]
+1=picSerial.c
+2=picSerial2.c
+3=
+
+[ProjectLog]
+Days=1
+D1=02-06-2023
+D1_L=2
+D1_L1=[49250]Started Editing.
+D1_L2=[50038]Project Closed.
+[Units]
+Count=1
+1=picSerial (main)

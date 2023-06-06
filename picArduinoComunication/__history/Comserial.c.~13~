@@ -1,0 +1,24 @@
+#include <16F877A.h>
+#include <string.h>
+#fuses HS,NOWDT,NOPROTECT,NOLVP
+#use delay(clock=4M)
+
+#use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7)
+
+void main()
+{
+ //  char mensaje[] = "Hola a todos";
+   int mensaje = 57;
+//   int i;
+//printf("%s", mensaje);
+   while(TRUE)
+   {
+  //    for(i = 0; i < strlen(mensaje); i++)
+    //  {
+         putc(mensaje);
+         //delay_ms(100);  // Retardo entre cada caracter
+  //    }
+
+      delay_ms(1000);  // Retardo entre cada envío del mensaje completo
+   }
+}

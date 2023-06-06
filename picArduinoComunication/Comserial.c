@@ -1,0 +1,21 @@
+#include <16F877A.h>
+#include <string.h>
+#fuses HS,NOWDT,NOPROTECT,NOLVP
+#use delay(clock=4M)
+#include <lcd.c>   // incluímos la librería para la lcd
+//comunicación serial
+#use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7)
+
+void main()
+{
+lcd_init();    // iniciamos la LCD
+   float tem = 37.7;
+   int mensaje = 57; //msj a enviar x UART
+   while(TRUE)
+   {
+   lcd_gotoxy(3, 1); //ubicamos el cursor en la lcd
+        lcd_putc(tem); //imprimimos en la lcd
+         putc(mensaje); //mandamos x serial rs232
+      delay_ms(1000);  // Retardo entre cada envío del mensaje completo
+   }
+}
